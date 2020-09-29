@@ -4,9 +4,25 @@
 #include <string.h>
 #include <assert.h>
 
-// This code is specifically designed for IPV4.
+// This code is specifically designed for IPv4.
 #define IPV4_ADDR_LENGTH 32
 
+/**
+ * ip_in_network
+ *
+ * This function determines whether `ip` is within `network`/`netmask`
+ * network.
+ *
+ * Input: 
+ * ip: The IPv4 IP to check for inclusion within the `network`/`netmask` network.
+ * network: The network address in `network`/`netmask` network for which 
+ *          `ip` will be checked for inclusion.
+ * network: The netmask in `network`/`netmask` network for which `ip` will
+ *          be checked for inclusion.
+ *
+ * Return:
+ * `true` if `ip` is within `network`/`netmask` network.
+ */
 static unsigned ip_in_network(const char *ip,
         const char *network,
         const uint32_t netmask) {
